@@ -1,14 +1,10 @@
 #pragma once
+#include "type_info.h"
 
-
-typedef enum {
-    INT_DATA,
-    STR_DATA
-}data_type;
 
 typedef struct {
     void* data;
-    data_type type;
+    const TypeInfo* type;
 }element;
 
 typedef struct {
@@ -19,5 +15,8 @@ typedef struct {
 
 void new_array(dynamic_array* arr);
 void free_array(dynamic_array* arr);
-void print_array(dynamic_array* arr);
-void push(dynamic_array* arr, void* value, data_type type);
+void print_array(const dynamic_array* arr);
+
+void push(dynamic_array* arr, const void* value, const TypeInfo* type);
+void remove(dynamic_array* arr, size_t index);
+// void swap(dynamic_array* arr, size_t index1, size_t index2);
