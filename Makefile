@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra
-OBJS = main.o dynarr.o
-HDRS = dynarrlib.h
+OBJS = main.o dynarr.o type_info.o
+HDRS = dynarrlib.h type_info.h
 TARGET = maim.exe
 
 
@@ -16,6 +16,9 @@ main.o: main.c $(HDRS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 dynarr.o: dynarr.c $(HDRS)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+type_info.o: type_info.c $(HDRS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 

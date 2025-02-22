@@ -16,7 +16,9 @@ typedef struct {
 void new_array(dynamic_array* arr);
 void free_array(dynamic_array* arr);
 void print_array(const dynamic_array* arr);
-
 void push(dynamic_array* arr, const void* value, const TypeInfo* type);
-void remove(dynamic_array* arr, size_t index);
+
+void swap(element* el1, element* el2);
+void mixed_sort(dynamic_array* arr);
+// void remove(dynamic_array* arr, size_t index);
 // void swap(dynamic_array* arr, size_t index1, size_t index2);

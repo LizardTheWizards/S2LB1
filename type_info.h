@@ -5,7 +5,8 @@ typedef struct {
     void* (*copy)(const void* data);
     void (*destroy)(void* data);
     void (*print)(const void* data);
+    int (*compare)(void* el1, void* el2);
 } TypeInfo;
 
-extern TypeInfo INT_TYPE;
-extern TypeInfo STR_TYPE;
+extern const TypeInfo INT_TYPE;
+extern const TypeInfo STR_TYPE;
